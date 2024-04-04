@@ -7,7 +7,7 @@ import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
 export class AuthController {
 	constructor(private readonly authService: AuthService){ }
 
-  login = async (request: TypedRequestBody<UserRequestBodyDTO>, response: Response) => {
+  auth = async (request: TypedRequestBody<UserRequestBodyDTO>, response: Response) => {
 		const body = {
 			email: request.body.email,
 			password: request.body.password,
@@ -18,7 +18,7 @@ export class AuthController {
 			response.status(200).json({ token });
 		} catch (error) {
 			if(error instanceof ThreeoCalcExceptions)
-				response.status(400).json(error);
+				response.status(401).json(error);
 			else
         response.status(500).json(error);
 		}

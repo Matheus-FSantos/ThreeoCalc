@@ -25,6 +25,6 @@ const calculationController: CalculationController = new CalculationController(c
 
 router.use(json());
 router.post("/calculate", authMiddleware.middleware, calculationController.calculate);
-router.post("/login", authController.login);
+router.post("/login", authController.auth);
 
 export { router as Router };
