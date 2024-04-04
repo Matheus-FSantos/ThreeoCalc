@@ -28,7 +28,7 @@ export class AuthService {
 		if(sessionStorage.getItem("token"))
 			return sessionStorage.getItem("token") + "";
 		else
-			throw new Error("There are no tokens");
+			throw new Error("There are no tokens here");
 	}
 
 }
