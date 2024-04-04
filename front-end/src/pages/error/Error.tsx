@@ -1,8 +1,11 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { Heading, Stack, Text } from "@chakra-ui/react";
+import { useDinamicTitle } from "../../hooks/useDinamicTitle";
 import { GlobalLayout } from "../../components/layout/GlobalLayout";
 
 const Error = (): React.ReactElement => {
+	useDinamicTitle("Erro");
+
 	return (
 		<GlobalLayout>
 			<Stack spacing={0} align="center">

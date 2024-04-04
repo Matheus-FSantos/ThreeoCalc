@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { Toast } from "../../../components/toast";
 import { FlexContainer } from "./style";
+import { Toast } from "../../../components/toast";
 import { RepeatIcon, StarIcon } from "@chakra-ui/icons";
+import { useDinamicTitle } from "../../../hooks/useDinamicTitle";
 import { AuthService } from "../../../services/auth/Auth.service";
 import { PrivateRoute } from "../../../components/auth/private-route"
 import { GlobalLayout } from "../../../components/layout/GlobalLayout";
@@ -11,6 +12,7 @@ import { CalculationService } from "../../../services/calculation/Calculation.se
 import { Button, Heading, Input, InputGroup, InputLeftElement, Stack, Text } from "@chakra-ui/react";
 
 const Home = (): React.ReactElement => {
+	useDinamicTitle("Inicio");
 	const authService = new AuthService();
 	const calculationService = new CalculationService();
 
