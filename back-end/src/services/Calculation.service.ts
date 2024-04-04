@@ -1,12 +1,10 @@
-import { CalculationRequestBodyDTO } from "../interfaces/Calculation.interface";
+import { CalculationRequestBodyDTO } from "../models/Calculation.model";
 
 import { NumbersValidation } from "../utils/validation/Numbers.validation";
 import { OperationValidation } from "../utils/validation/Operation.validation";
 
 export class CalculationService {
-
-  private operationValidation = new OperationValidation();
-  private numbersValidation = new NumbersValidation();
+	constructor(private readonly operationValidation: OperationValidation, private readonly numbersValidation: NumbersValidation){ }
 
   calculate = (param: string, body: CalculationRequestBodyDTO): string => {
     let total: number = 0;

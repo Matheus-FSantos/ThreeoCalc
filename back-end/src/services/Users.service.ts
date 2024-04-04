@@ -1,11 +1,10 @@
-import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
-import { UserDTO } from "../interfaces/Users.interface";
+import { UserDTO } from "../models/users.model.dto";
 import { UsersRepository } from "../repositories/Users.repository";
+import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
 
 
 export class UsersService {
-
-	private userRepository = new UsersRepository()
+	constructor(private readonly userRepository: UsersRepository){ }
 
 	findByEmail = (email: string): UserDTO => {
 		const user: UserDTO | undefined = this.userRepository.findAll().find(user => user.email === email);

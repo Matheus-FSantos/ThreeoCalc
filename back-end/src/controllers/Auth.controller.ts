@@ -1,12 +1,11 @@
 import { Response } from "express";
 import { AuthService } from "../services/Auth.service";
-import { UserRequestBodyDTO } from "../interfaces/Users.interface";
+import { UserRequestBodyDTO } from "../models/users.model.dto";
 import { TypedRequestBody } from "../interfaces/TypedRequests.interfaces";
 import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
 
 export class AuthController {
-
-	private authService = new AuthService();
+	constructor(private readonly authService: AuthService){ }
 
   login = async (request: TypedRequestBody<UserRequestBodyDTO>, response: Response) => {
 		const body = {

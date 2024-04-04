@@ -1,12 +1,11 @@
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { UsersService } from "./Users.service";
+import { UserDTO, UserRequestBodyDTO } from "../models/users.model.dto";
 import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
-import { UserDTO, UserRequestBodyDTO } from "../interfaces/Users.interface";
 
 export class AuthService {
-
-	private userService = new UsersService();
+	constructor(private readonly userService: UsersService){ }
 	
 	auth = async (body: UserRequestBodyDTO): Promise<string> => {
 		const user: UserDTO = this.userService.findByEmail(body.email);

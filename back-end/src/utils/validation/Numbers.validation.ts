@@ -1,5 +1,5 @@
-import { CalculationRequestBodyDTO } from "../../interfaces/Calculation.interface";
 import { ThreeoCalcExceptions } from "../../interfaces/Exceptions.interface";
+import { CalculationRequestBodyDTO } from "../../models/Calculation.model";
 
 export class NumbersValidation {
 
