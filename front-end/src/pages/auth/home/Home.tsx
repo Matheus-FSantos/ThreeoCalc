@@ -95,7 +95,10 @@ const Home = (): React.ReactElement => {
 								</InputGroup>
 							</FlexContainer>
 
-							<Text fontWeight="bold" color="gray.500" textAlign="center">Resultado: { total ? total : "Realize uma conta..."}</Text>
+							<Stack spacing={ 0 }>
+								<Text fontWeight="bold" color="gray.500" textAlign="center">Resultado: { total ? total : "Realize uma conta..."}</Text>
+								<Text fontWeight="bold" fontSize="10px" color="gray.500" textAlign="center">{ total && "(Apenas 2 casas decimáis)"}</Text>
+							</Stack>
 
 							<FlexContainer>
 								<Button
