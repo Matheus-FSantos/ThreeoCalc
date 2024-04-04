@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bom, como informado no README.md raiz do projeto, cada submódulo tem um README.md próprio, onde eu aponto o resultado final de cada módulo de maneira separada.
 
-Currently, two official plugins are available:
+Pelo Front-End, é possivel assistir um video do resultado final, então não vou explicar muito sobre.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O resultado final do teste pelo lado do Front-End é:
 
-## Expanding the ESLint configuration
+**Home Page:**
+![Home page](home.png)
+![Home page with animations](home-with-animation.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Login Page**
+![Login page](login.png)
+![Login page with credentials](login-with-credentials.png)
+![Login page with toast](login-with-toast.png)
 
-- Configure the top-level `parserOptions` property like this:
+**Error page**
+Obs.: Essa tela só aparece quando rodamos o projeto localmente, o vercel buga essa pagina, então temos que sempre seguir o fluxo padrão do app (login > home).
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![Error page](error.png)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 🎥 Video
+
+Veja como o site ficou visualizando o vídeo da minha execução, porém, você pode acessar o site usando essa url:
+
+[ThreeoCalc - Vercel Deploy](https://threeo-calc-front-dumrgepgv-matheus-ferreira-santos-projects.vercel.app/)
+
+> Obs.: É possivel encontrar o video dentro da pasta: *"example-video/ThreeoCalc-example.mp4"*
