@@ -1,8 +1,11 @@
+import { ChakraProvider } from "@chakra-ui/react";
+import { AppRoutes } from "./pages/routes";
+
 const App = () => {
   return (
-    <div>
-      hello world!
-    </div>
+		<ChakraProvider>
+			<AppRoutes />
+		</ChakraProvider>
   )
 }
 
