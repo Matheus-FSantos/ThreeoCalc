@@ -1,0 +1,28 @@
+{
+  "name": "threeocalc",
+  "version": "1.0.0",
+  "description": "Back-End module for the technical test of the company Threeo IT Company",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "Matheus Ferreira Santos",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.6",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/nodemon": "^1.19.6",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
