@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { Toast } from "../../../components/toast";
-import { Container, FlexContainer } from "./style";
+import { FlexContainer } from "./style";
 import { RepeatIcon, StarIcon } from "@chakra-ui/icons";
 import { AuthService } from "../../../services/auth/Auth.service";
 import { PrivateRoute } from "../../../components/auth/private-route"
+import { GlobalLayout } from "../../../components/layout/GlobalLayout";
 import { CalculationDTO } from "../../../services/models/Calculation.model";
 import { CalculationService } from "../../../services/calculation/Calculation.service";
 import { Button, Heading, Input, InputGroup, InputLeftElement, Stack, Text } from "@chakra-ui/react";
@@ -66,7 +67,7 @@ const Home = (): React.ReactElement => {
 	
 	return (
 		<PrivateRoute>
-			<Container>
+			<GlobalLayout>
 				<Stack spacing={ 16 } maxWidth="1000px" width="100%">
 					<Stack spacing={0} align="center">
 						<Heading as="h1">ThreeoCalc</Heading>
@@ -142,7 +143,7 @@ const Home = (): React.ReactElement => {
 				</Stack>
 
 				<Toast />
-			</Container>
+			</GlobalLayout>
 		</PrivateRoute>
 	);
 }

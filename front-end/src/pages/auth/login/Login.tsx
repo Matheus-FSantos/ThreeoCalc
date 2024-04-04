@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import { AtSignIcon, LinkIcon } from "@chakra-ui/icons";
 import { Input, Heading, InputGroup, InputLeftElement, InputRightElement, Button, Stack } from "@chakra-ui/react";
 
-import { Container } from "./style";
 import { Toast } from "../../../components/toast";
 import { Label } from "../../../components/ui/label";
 import { useTimeout } from "../../../hooks/useTimeout";
 import { AuthDTO } from "../../../services/models/Auth.model";
-import { AuthService } from "../../../services/auth/Auth.service";
-import { useNavigate } from "react-router-dom";
 import { useDinamicTitle } from "../../../hooks/useDinamicTitle";
+import { AuthService } from "../../../services/auth/Auth.service";
+import { GlobalLayout } from "../../../components/layout/GlobalLayout";
 
 
 const Login = (): React.ReactElement => {
@@ -64,7 +64,7 @@ const Login = (): React.ReactElement => {
 	}
 
 	return (
-		<Container>
+		<GlobalLayout>
 			<Stack spacing={12} maxWidth="500px" width="100%">
 				<Stack spacing={0}>
 					<Heading as="h1">Login</Heading>
@@ -117,7 +117,7 @@ const Login = (): React.ReactElement => {
 			</Stack>
 
 			<Toast />
-		</Container>
+		</GlobalLayout>
 	);
 }
 
