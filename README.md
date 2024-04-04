@@ -6,6 +6,8 @@ Como é possivel ver acima, estou utilizando uma convenção bem comum para orga
 
 > Monorepo: Um monorepo é um conceito de desenvolvimento de software onde todo o código-fonte de um projeto é mantido em um único repositório. Isso significa que todos os componentes, módulos e bibliotecas relacionados a um projeto são armazenados juntos, em vez de serem divididos em vários repositórios menores (os famosos Polyrepo). Utilizando essa abordagem, podemos simplificar o gerenciamento de dependências, facilitar a colaboração entre equipes e proporcionar uma visão unificada do código do projeto.
 
+⚠️⚠️⚠️ IMPORTANTE: O BACK-END PODE TER LENTIDÃO. É importante freezar, para quem for testar o App, que o Back-End pode estar inativo quando você fizer a requisição, o Render, normalmente, desliga a sua aplicação caso ela fique x segundos sem receber nenhuma requisição, então, caso você entre e quando clicar para fazer login a tela de loading demorar muito, tenha em mente que é o Render que está rodando o Dockerfile para tratar sua requisição, então, somente espere e não saia da página, aguarde um instante que conseguirá utilizar a aplicação.
+
 ### 🎯 O que me foi proposto?
 
 A idéia do projeto é simples, isso não quer dizer que era fácil, abstraindo tudo, ou seja, focando no que importa e excluindo os detalhes que talvez fossem meramente detalhes KKKK, a idéia do projeto era:
