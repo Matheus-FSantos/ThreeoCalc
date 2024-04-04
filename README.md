@@ -41,6 +41,16 @@ Obviamente, como todo teste, sigo ele a risca e acrecento mais algumas questões
 
 Acima está o core de todas as técnologias que utilizei, pode ter algo que utilizei, uma biblioteca ou algo similar, que não está na lista acima, porém, o principal está ai com sua devida explicação.
 
+### 🎲 Dados para teste
+
+Quando você for fazer login na plataforma, utilize os seguintes dados para ter a permissão para login:
+
+email: matheus@gmail.com, senha: 1234
+<br/>
+email: admin@admin.com, senha: admin
+
+tem mais um usuário, porém não lembro a senha que coloquei KKKKKK, mas com esses já consegue acessar!
+
 ### 🖋️ Considerações finais
 
 Acredito que esse teste foi de suma importancia para o meu aprendizado, não falei anteriormente mas todo teste técnico que eu realizo aproveito para aprender algo, nesse teste técnico aprendi a utilizar a biblioteca ChakraUI (nunca tinha a utilizado na vida) e vi que ela é bem parecida com MaterialUI (que também aprendi em um teste técnico distante).
