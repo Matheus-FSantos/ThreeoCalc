@@ -1,7 +1,7 @@
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { UsersService } from "./Users.service";
-import { UserDTO, UserRequestBodyDTO } from "../models/users.model.dto";
+import { UserDTO, UserRequestBodyDTO } from "../models/Users.model";
 import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
 
 export class AuthService {

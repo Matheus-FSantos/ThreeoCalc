@@ -1,4 +1,4 @@
-import { UserDTO } from "../models/users.model.dto";
+import { UserDTO } from "../models/Users.model";
 import { UsersRepository } from "../repositories/Users.repository";
 import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
 

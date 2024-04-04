@@ -1,6 +1,6 @@
 import { Response } from "express";
 import { AuthService } from "../services/Auth.service";
-import { UserRequestBodyDTO } from "../models/users.model.dto";
+import { UserRequestBodyDTO } from "../models/Users.model";
 import { TypedRequestBody } from "../interfaces/TypedRequests.interfaces";
 import { ThreeoCalcExceptions } from "../interfaces/Exceptions.interface";
 

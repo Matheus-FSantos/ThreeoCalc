@@ -1,4 +1,4 @@
-import { UserDTO } from "../models/users.model.dto";
+import { UserDTO } from "../models/Users.model";
 
 
 export class UsersRepository {
