@@ -1,18 +1,25 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { AtSignIcon, LinkIcon } from "@chakra-ui/icons";
-import { Input, Heading, InputGroup, InputLeftElement, InputRightElement, Button, Stack, Alert, AlertIcon } from "@chakra-ui/react";
+import { Input, Heading, InputGroup, InputLeftElement, InputRightElement, Button, Stack } from "@chakra-ui/react";
 
 import { Container } from "./style";
-
-/* UI */
+import { Toast } from "../../../components/toast";
 import { Label } from "../../../components/ui/label";
+import { useTimeout } from "../../../hooks/useTimeout";
 import { AuthDTO } from "../../../services/models/Auth.model";
 import { AuthService } from "../../../services/auth/Auth.service";
+import { useNavigate } from "react-router-dom";
+import { useDinamicTitle } from "../../../hooks/useDinamicTitle";
 
 
 const Login = (): React.ReactElement => {
+	useDinamicTitle("Login");
+	const navigate = useNavigate();
 	const authService = new AuthService();
+
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isDisabled, setIsDisabled] = useState<boolean>(false);
 	const [passwordIsShowing, setPasswordIsShowing] = useState<boolean>(false);
 
 	const [email, setEmail] = useState<string>("");
@@ -21,12 +28,38 @@ const Login = (): React.ReactElement => {
 	const handleSubmit = (e: React.FormEvent): void => {
 		e.preventDefault();
 		setIsLoading(true);
+		setIsDisabled(true);
 		const credentials: AuthDTO = { email, password };
-		console.log(credentials);
 
-		authService.getToken(credentials).then(data => {
-			//authService.setToken(data.token);
+		authService.getToken(credentials).then(async _ => {
 			setIsLoading(false);
+			toast.success("Logado! Redirecionando...", {
+				position: "top-right",
+				autoClose: 2000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+				theme: "colored",
+			});
+			await useTimeout(2000);
+			navigate("/");
+		}).catch(error => {
+			console.clear();
+			setIsLoading(false);
+			setIsDisabled(false);
+
+			toast.error(`Erro ao logar: ${ error.message }`, {
+				position: "top-right",
+				autoClose: 2000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+				theme: "colored",
+			});
 		});
 	}
 
@@ -73,6 +106,7 @@ const Login = (): React.ReactElement => {
 							type="submit"
 							variant="outline"
 							colorScheme="teal"
+							disabled={ isDisabled }
 							isLoading={ isLoading }
 							loadingText="Carregando"
 						>
@@ -81,6 +115,8 @@ const Login = (): React.ReactElement => {
 					</Stack>
 				</form>
 			</Stack>
+
+			<Toast />
 		</Container>
 	);
 }

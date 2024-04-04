@@ -13,4 +13,14 @@ const Container = styled.div`
 	padding: 20px;
 `;
 
-export { Container };
+const FlexContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	justify-content: center;
+
+	gap: 1.625rem;
+`;
+
+export { Container, FlexContainer };
